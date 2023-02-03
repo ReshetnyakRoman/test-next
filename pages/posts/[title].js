@@ -14,7 +14,7 @@ export default function FirstPost({ title }) {
   });
 
   const post = async function () {
-    fetch("http://localhost:3000/api/post", {
+    fetch("/api/post", {
       method: "POST",
       body: JSON.stringify({ im: "from body" })
     })
@@ -23,7 +23,7 @@ export default function FirstPost({ title }) {
   };
 
   const get = async function () {
-    fetch("http://localhost:3000/api/get?kenny=killed&you=bastards")
+    fetch("/api/get?kenny=killed&you=bastards")
       .then((res) => res.json())
       .then((response) => alert(response.text));
   };
